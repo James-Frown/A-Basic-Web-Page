@@ -58,9 +58,9 @@
 
         <div class="graph">
             <h2>Create a line graph</h2>
-            <button onclick="createGraph(myChart)">Create</button>
+            <button onclick="templateGraph(myChart)">Show Template</button>
             <button onclick="popViz(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut.innerHTML, myChart)">Populate</button>
-            <button onclick="clearViz(myChart)">Reset</button>
+            <button onclick="clearViz(xRangeOut.innerHTML, yRangeOut.innerHTML, myChart)">Reset</button>
             <br><br>
             <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
         </div>

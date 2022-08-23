@@ -57,7 +57,7 @@ function getXRange(input, target) {
 
 function getRandomData(var1, Var2, target) {
     let randNum;
-    for (let i = 0; i <= var1 - 1; i++) {
+    for (let i = 0; i <= var1; i++) {
         randNum = Math.floor(Math.random() * Var2);
         console.log(randNum);
         if (i === 0) {
@@ -71,7 +71,7 @@ function getRandomData(var1, Var2, target) {
     return;
 }
 
-function createGraph(chartVar) {
+function templateGraph(chartVar) {
 
     var xValues = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
@@ -106,10 +106,6 @@ function popViz(varX, varY, varData, varChart) {
 
     var yValues = [];
 
-    var dataValues = [];
-
-    var num;
-
     for (let i = 0; i <= varX; i++) {
         xValues.push(i);
     }
@@ -118,21 +114,7 @@ function popViz(varX, varY, varData, varChart) {
         yValues.push(m);
     }
 
-    for (let n = 0; n <= varData.length - 1; n++) {
-        // if varData[n] === "," move on
-        // else if varData[n] === " " move on 
-        // else varData[n] push into dataValues
-
-        if (varData[n] === " ") {
-            n++;
-        }
-        if (varData[n] === ",") {
-            n++;
-        } else {
-            dataValues.push(varData.charAt(n));
-        }
-
-    }
+    var dataValues = randData;
 
     new Chart(varChart, {
         type: "line",
@@ -156,10 +138,18 @@ function popViz(varX, varY, varData, varChart) {
 
 }
 
-function clearViz(chartVar) {
-    var xValues = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+function clearViz(varX, varY, chartVar) {
+    var xValues = [];
 
-    var yValues = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+    var yValues = [];
+
+    for (let i = 0; i <= varX; i++) {
+        xValues.push(i);
+    }
+
+    for (let m = 0; m <= varY; m++) {
+        yValues.push(m);
+    }
 
     var dataValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
