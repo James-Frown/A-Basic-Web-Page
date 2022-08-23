@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello World</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="container-1">
+
+        <div class="header">
+            <h1>Create a Basic Chart</h1>
+            <p>Follow the instructions to create your own chart...</p>
+        </div>
+
+        <div class="test">
+            <h2>Get the day of the week:</h2>
+            <button onclick="getDay(day)">Click Here</button>
+            <button onclick="clearData(day)">Clear Data</button>
+            <p id="day"></p>
+        </div>
+
+        <div class="data-input">
+            <h2>Enter your x range</h2>
+            <input type="number" id="xRange" value="0">
+            <button onclick="getXRange(xRange, xRangeOut)">Click Here</button>
+            <button onclick="clearData(xRangeOut)">Clear Data</button>
+            <p id="xRangeOut"></p>
+        </div>
+
+        <div class="data-input">
+            <h2>Enter your y range</h2>
+            <input type="number" id="yRange" value="0">
+            <button onclick="getYRange(yRange, yRangeOut)">Click Here</button>
+            <button onclick="clearData(yRangeOut)">Clear Data</button>
+            <p id="yRangeOut"></p>
+        </div>
+
+        <div class="data-input">
+            <h2>Get random data values</h2>
+            <button onclick="getRandomData(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut)">Create Random Dataset</button>
+            <button onclick="clearData(dataOut)">Clear Random Dataset</button>
+            <p id="dataOut"></p>
+        </div>
+
+        <div class="graph">
+            <h2>Create a line graph</h2>
+            <button onclick="createGraph(myChart)">Create</button>
+            <button onclick="popViz(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut.innerHTML, myChart)">Populate</button>
+            <button onclick="clearViz(myChart)">Reset</button>
+            <br><br>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        </div>
+
+    </div>
+
+    <script src="main.js " async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</body>
+
+</html>
