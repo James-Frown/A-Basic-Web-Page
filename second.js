@@ -22,7 +22,8 @@ function monthlyOut(outPut2) {
     outPut2.innerHTML = "Monthly";
 }
 
-function buildChart(userChartVar) {
+function getCurDay() {
+    let currentDay = "";
 
     switch (new Date().getDay()) {
         case 0:
@@ -46,11 +47,27 @@ function buildChart(userChartVar) {
         case 6:
             currentDay = "Saturday";
             break;
+        case Error:
+            currentDay = "Un-Avaliable";
     }
 
-    var xValues = [currentDay];
+    return currentDay;
+}
 
+function buildChart(userChartVar) {
 
+    let currDay = getCurDay();
+
+    let xValues = [];
+
+    if (weekly is selected) {
+        xValues = [1, 2, 3, 4, 5, 6, 7];
+    } else
+    if (monthly is selected) {
+        for (let x = o; x < 31; x++) {
+            xValues.push(x);
+        }
+    }
 
     var yValues = [];
 
@@ -71,7 +88,7 @@ function buildChart(userChartVar) {
             datasets: [{
                 fill: false,
                 lineTension: 0,
-                backgroundColor: "rgba(0,0,255,1.0)",
+                backgroundColor: "rgba(0,52,255,1.0)",
                 borderColor: "rgba(0,0,255,0.1)",
                 data: dataValues
             }]

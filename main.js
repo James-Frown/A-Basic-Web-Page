@@ -33,6 +33,7 @@ function getDay(target) {
 
 function clearData(target) {
     target.innerHTML = "";
+    randData = [];
 }
 
 function getYRange(input, target) {
@@ -151,7 +152,7 @@ function clearViz(varX, varY, chartVar) {
         yValues.push(m);
     }
 
-    var dataValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let dataValues = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     new Chart(chartVar, {
         type: "line",
@@ -172,4 +173,6 @@ function clearViz(varX, varY, chartVar) {
             }
         }
     });
+
+    return dataValues;
 }
