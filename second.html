@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Site</title>
+    <title>Basic Web Dashboard</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="second.css">
@@ -19,41 +19,53 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <div class="container-2">
+    <div class="container-1">
 
         <div class="header">
-            <h1>Site Statistics</h1>
-            <p>How many users have seen this site?</p>
+            <h1>Data Vizualization</h1>
+            <p>Learn more baout how your users interact with your business...</p>
+        </div>
+
+        <div class="test">
+            <h2>Admin Menu!</h2>
+            <button onclick="showAdmin()">Show</button>
+            <button onclick="hideAdmin()">Hide</button>
+        </div>
+
+        <div class="test">
+            <h2>Choose your data period:</h2>
+            <button onclick="weeklySelected()">Weekly</button>
+            <button onclick="monthlySelected()">Monthly</button>
         </div>
 
         <div class="data-input">
-            <h2>Amount of Users:</h2>
-            <input type="number" id="verA" value="0">
-            <button onclick="addRange(verA, outPut1)">Add</button>
-            <button onclick="clearRange(verA, outPut1)">Clear</button>
-            <p id="outPut1"></p>
-            <br><br>
+            <h2>Enter your y range</h2>
+            <input type="number" id="yRange" value="0">
+            <button onclick="getYRange(yRange, yRangeOut)">Click Here</button>
+            <button onclick="clearData(yRangeOut)">Clear Data</button>
+            <p id="yRangeOut"></p>
         </div>
 
         <div class="data-input">
-            <h2>Timeframe:</h2>
-            <button onclick="weeklyOut(outPut2)">By week</button>
-            <button onclick="monthlyOut(outPut2)">By Month</button>
-            <p id="outPut2"></p>
-            <br><br>
+            <h2>Get random data values</h2>
+            <button onclick="getRandomData(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut)">Create Random Dataset</button>
+            <button onclick="clearData(dataOut)">Clear Random Dataset</button>
+            <p id="dataOut"></p>
         </div>
 
         <div class="graph">
-            <h2>Chart Settings</h2>
-            <button onclick="buildChart(usersChart)">Build</button>
-            <button onclick="resetChart(usersChart)">Reset</button>
+            <h2>Create a line graph</h2>
+            <button onclick="templateGraph(myChart)">Show Template</button>
+            <button onclick="popViz(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut.innerHTML, myChart)">Populate</button>
+            <button onclick="clearViz(xRangeOut.innerHTML, yRangeOut.innerHTML, myChart)">Reset</button>
             <br><br>
-            <canvas id="usersChart" style="width:100%;max-width:600px"></canvas>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
         </div>
 
     </div>
 
-    <script src="second.js" async defer></script>
+    <script src="main.js " async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
 
 </html>
