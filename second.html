@@ -23,7 +23,7 @@
 
         <div class="header">
             <h1>Data Vizualization</h1>
-            <p>Learn more baout how your users interact with your business...</p>
+            <p>Learn more about how your users interact with your business...</p>
         </div>
 
         <div class="test">
@@ -39,25 +39,16 @@
         </div>
 
         <div class="data-input">
-            <h2>Enter your y range</h2>
-            <input type="number" id="yRange" value="0">
-            <button onclick="getYRange(yRange, yRangeOut)">Click Here</button>
-            <button onclick="clearData(yRangeOut)">Clear Data</button>
-            <p id="yRangeOut"></p>
-        </div>
-
-        <div class="data-input">
-            <h2>Get random data values</h2>
-            <button onclick="getRandomData(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut)">Create Random Dataset</button>
-            <button onclick="clearData(dataOut)">Clear Random Dataset</button>
-            <p id="dataOut"></p>
+            <h2>Data Sources:</h2>
+            <button onclick="getRandomData()">Get Random Dataset</button>
+            <button onclick="uploadDataset()">Dataset Popup</button>
+            <button onclick="clearData()">Clear Datasets</button>
         </div>
 
         <div class="graph">
-            <h2>Create a line graph</h2>
-            <button onclick="templateGraph(myChart)">Show Template</button>
-            <button onclick="popViz(xRangeOut.innerHTML, yRangeOut.innerHTML, dataOut.innerHTML, myChart)">Populate</button>
-            <button onclick="clearViz(xRangeOut.innerHTML, yRangeOut.innerHTML, myChart)">Reset</button>
+            <h2>Update Vizualization</h2>
+            <button onclick="popViz()">Build Vizualization</button>
+            <button onclick="clearViz()">Reset Vizualization</button>
             <br><br>
             <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
         </div>

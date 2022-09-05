@@ -239,3 +239,7 @@ function monthlySelected() {
 function showAdmin() {
 
 }
+
+function hideAdmin() {
+
+}
